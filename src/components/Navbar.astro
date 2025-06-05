@@ -1,0 +1,55 @@
+---
+// src/components/Navbar.astro
+--- 
+<nav class="bg-gradient-to-r from-indigo-600 to-purple-600 py-4 shadow-lg">
+  <div class="container mx-auto px-4 flex items-center justify-between">
+    <a href="/" class="text-white text-2xl font-bold">BitLife Online</a>
+    <ul class="hidden md:flex space-x-6 text-white">
+      <li><a href="#game-frame" class="hover:text-gray-200">Play</a></li>
+      <li><a href="#features" class="hover:text-gray-200">Features</a></li>
+      <li><a href="#how-to-play" class="hover:text-gray-200">How to Play</a></li>
+      <li><a href="#faq" class="hover:text-gray-200">FAQ</a></li>
+      <li>
+        <a
+          href="https://github.com/bitlifeonline"
+          target="_blank"
+          rel="noopener"
+          class="hover:text-gray-200"
+        >GitHub</a>
+      </li>
+    </ul>
+    <!-- Mobile menu button (optional) -->
+    <button
+      class="md:hidden text-white focus:outline-none"
+      aria-label="Open mobile menu"
+      on:click={() => {
+        const menu = document.getElementById('mobile-menu');
+        menu.classList.toggle('hidden');
+      }}
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+           viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile dropdown (hidden by default) -->
+  <div id="mobile-menu" class="md:hidden hidden bg-indigo-600">
+    <ul class="px-4 py-2 space-y-2">
+      <li><a href="#game-frame" class="block text-white">Play</a></li>
+      <li><a href="#features" class="block text-white">Features</a></li>
+      <li><a href="#how-to-play" class="block text-white">How to Play</a></li>
+      <li><a href="#faq" class="block text-white">FAQ</a></li>
+      <li>
+        <a
+          href="https://github.com/bitlifeonline"
+          target="_blank"
+          rel="noopener"
+          class="block text-white"
+        >GitHub</a>
+      </li>
+    </ul>
+  </div>
+</nav>
